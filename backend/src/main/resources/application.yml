@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: chat-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/chat}
+    username: ${SPRING_DATASOURCE_USERNAME:chat}
+    password: ${SPRING_DATASOURCE_PASSWORD:chat}
+    hikari:
+      maximum-pool-size: 20
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.jdbc.time_zone: UTC
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+  mail:
+    host: ${SPRING_MAIL_HOST:localhost}
+    port: ${SPRING_MAIL_PORT:1025}
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+
+server:
+  port: 8080
+  forward-headers-strategy: framework
+
+chat:
+  uploads-dir: ${CHAT_UPLOADS_DIR:./uploads}
+  app-base-url: ${CHAT_APP_BASE_URL:http://localhost:8080}
+  max-file-bytes: 20971520      # 20 MB
+  max-image-bytes: 3145728      # 3 MB
+  max-message-chars: 3072       # 3 KB text
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.dataart.chat: INFO

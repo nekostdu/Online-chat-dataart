@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  mail:
+    host: localhost
+    port: 3025
+
+chat:
+  uploads-dir: ${java.io.tmpdir}/chat-test-uploads
+  app-base-url: http://localhost
+  max-file-bytes: 20971520
+  max-image-bytes: 3145728
+  max-message-chars: 3072

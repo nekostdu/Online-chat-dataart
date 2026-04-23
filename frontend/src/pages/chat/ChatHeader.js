@@ -1,5 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Button } from '@/components/ui';
-export function ChatHeader({ username, onOpenCatalog, onOpenContacts, onOpenProfile, onLogout }) {
-    return (_jsxs("header", { className: "h-12 px-4 bg-white border-b border-gray-100 flex items-center justify-between shrink-0", children: [_jsxs("div", { className: "flex items-center gap-4", children: [_jsx("div", { className: "font-bold text-brand-600", children: "Chat" }), _jsx("button", { className: "text-sm text-gray-600 hover:text-gray-900", onClick: onOpenCatalog, children: "Public rooms" }), _jsx("button", { className: "text-sm text-gray-600 hover:text-gray-900", onClick: onOpenContacts, children: "Contacts" }), _jsx("button", { className: "text-sm text-gray-600 hover:text-gray-900", onClick: onOpenProfile, children: "Sessions & profile" })] }), _jsxs("div", { className: "flex items-center gap-3 text-sm", children: [_jsx("span", { className: "text-gray-500", children: username }), _jsx(Button, { variant: "secondary", onClick: onLogout, children: "Sign out" })] })] }));
-}

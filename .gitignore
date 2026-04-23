@@ -4,6 +4,11 @@ dist/
 .vite/
 *.log
 
+# TypeScript build artefacts (tsc compiler output — not source)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
 # Java / Gradle
 .gradle/
 build/
